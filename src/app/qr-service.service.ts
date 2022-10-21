@@ -8,7 +8,9 @@ export class QrServiceService {
   constructor() {}
 
   public generateQrCode(data: string): string {
-    let qr = qrcode(3, 'L');
+    let qr = qrcode(0, 'L');
+    console.log(qr);
+
     qr.addData(data);
     qr.make();
 
