@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { QrServiceService } from './qr-service.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { QrServiceService } from './qr-service.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   textBox: any;
 
   title = 'qr-code-web';
@@ -16,8 +16,15 @@ export class AppComponent {
     this.title = 'QR Code Generator';
   }
 
+  ngOnInit(): void {}
+
   public generateQrCode(): void {
     const qrCode = this.qrService.generateQrCode(this.textBox);
     this.imageSpot = qrCode;
+  }
+
+  public clear(): void {
+    this.imageSpot = '';
+    this.textBox = '';
   }
 }
