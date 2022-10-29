@@ -1,0 +1,16 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">{{title}}</h1>
+    <div class="input-group" id="contenuCode"><span class="input-group-text">{{qrCodeContentLabel}}
+        QR</span><textarea [(ngModel)]="textBox" class="form-control" aria-label="With textarea"></textarea></div>
+    <br><button class="btn btn-primary btn-lg" id="boutonGenerate" type="button"
+      (click)="generateQrCode()">{{generateButtonText}}</button>
+    <button class="btn btn-primary btn-lg" id="boutonClear" type="button" (click)="clear()">Effacer</button>
+  </div>
+</div>
+
+<div class="shadow">
+  <img src={{imageSpot}} id="imageSpot" />
+</div>
+
+<canvas id="my-house" width="300" height="300"></canvas>
